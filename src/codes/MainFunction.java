@@ -2,10 +2,7 @@ package codes;
 
 public class MainFunction {
 
-    /**
-     * Constructor
-     */
-    public MainFunction () {
-
+    public static void main (String[] args) {
+        Example e = new Example();
     }
 }
