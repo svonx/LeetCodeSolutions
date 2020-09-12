@@ -98,4 +98,37 @@ public class Example {
 
         return result;
     }
+
+    /**
+     * Problem 4
+     * @param nums1 sorted array 1
+     * @param nums2 sorted array 2
+     * @return median
+     */
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int totalLength = nums1.length + nums2.length;
+        double previousResult = -10E6, result = -10E6;
+
+        for (int i = 0, j = 0; i+j-1 < totalLength/2; ) {
+            previousResult = result;
+            if (i == nums1.length) {
+                result = nums2[j++];
+            }
+            else if (j == nums2.length) {
+                result = nums1[i++];
+            }
+            else {
+                if (nums1[i] < nums2[j]) {
+                    result = nums1[i++];
+                }
+                else {
+                    result = nums2[j++];
+                }
+            }
+        }
+
+        return (totalLength & 1) == 1
+                ? result
+                : ((previousResult + result) / 2);
+    }
 }

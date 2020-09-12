@@ -33,4 +33,20 @@ class ExampleTest {
         assertEquals(0, e.maxProduct(new int[] {-2, 0, -1}));
     }
 
+    @Test
+    void  testFindMedianSortedArray() {
+        assertEquals(2.0000, e.findMedianSortedArrays(new int[] {1, 3},
+                new int[] {2}), .00004);
+        assertEquals(2.5000, e.findMedianSortedArrays(new int[] {1, 3},
+                new int[] {2, 4}), .00004);
+        assertEquals(0.0000, e.findMedianSortedArrays(new int[] {0, 0, 0},
+                new int[] {0, 0, 0, 0}), .0004);
+        assertEquals(1.0000 ,e.findMedianSortedArrays(new int[] {},
+                new int[] {1}), .0004);
+        assertEquals(4.5, e.findMedianSortedArrays(new int[] {1, 2, 3, 4},
+                new int[] {5, 6, 7, 8}), .0004);
+        assertEquals(3, e.findMedianSortedArrays(new int[] {1},
+                new int[] {2, 3, 4, 5}), .0004);
+    }
+
 }
